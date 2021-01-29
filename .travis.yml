@@ -5,12 +5,12 @@
 ---
 sudo: false
 rvm:
-- 2.5.3@schemadev
+- 2.5.3
 gemfile:
 - gemfiles/activerecord-edge/Gemfile.postgresql
 env: POSTGRESQL_DB_USER=postgres
 addons:
-  postgresql: '9.4'
+  - postgresql
 before_script: bundle exec rake create_databases
 after_script: bundle exec rake drop_databases
 script: bundle exec rake travis
